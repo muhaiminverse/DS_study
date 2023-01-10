@@ -7,28 +7,32 @@ int main()
     int n;
     cin>>n;
     vector<int>a(n);
-    for(int i=0;i<n;i++)
+    for(int i=0; i<n; i++)
     {
         cin>>a[i];
     }
-    for(int pass=0;pass<n;pass++)
+    for(int pass=0; pass<n; pass++)
     {
         int last =n-1-pass;
         bool sorted = true;
-        for(int j=0;j<=last-1;j++)
+        for(int j=0; j<=last-1; j++)
         {
-           if(a[j]>a[j+1])
-           {
-               swap(a[j],a[j+1]);
-               sorted = false;
-           }
+            if(a[j]>a[j+1])
+            {
+                swap(a[j],a[j+1]);
+                sorted = false;
+            }
         }
         if(sorted)
             break;
-    }f
+        cout<<"Pass"<<pass<<": ";
+        for(int i=0; i<n; i++)
+            cout<<a[i]<<" ";
+        cout<<"\n";
+    }
 
-cout<<"After sorting\n";
-    for(int i=0;i<n;i++)
+    cout<<"After sorting\n";
+    for(int i=0; i<n; i++)
     {
         cout<<a[i]<<" ";
     }
@@ -37,6 +41,9 @@ cout<<"After sorting\n";
 }
 
 /*
+7
+5 3 1 4 2 6 1
+
 7
 3 5 1 4 2 6 1
 */
