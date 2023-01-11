@@ -44,8 +44,12 @@ vector<int>quick_sort(vector<int>&a)
 int main()
 {
 
+    int n;
+    cin>>n;
+    vector<int>a(n);
+    for(int i=0;i<n;i++)
+        cin>>a[i];
 
-    vector<int>a= {5,2,3,5,4,1};
     vector<int>sort_a = quick_sort(a);
     for(int i=0; i<sort_a.size(); i++)
         cout<<sort_a[i]<<" ";
