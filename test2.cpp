@@ -1,24 +1,25 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-class Student
+int MissingNo(vector<int> a, int n)
 {
-public:
-    string name;
-    int std_id;
-    int age;
-    string fathersName;
-    string motherName;
-
-    Student
-    {
-        string s;
-    }
-};
+    int i, total;
+    total = (n + 1) * (n + 2) / 2;
+    for (i = 0; i < n-1; i++)
+        total -= a[i];
+    return total;
+}
 int main()
 {
-    Student s;
-    s.name="Muhaimin";
-    s.std_id=222-115-153;
+    int n;
+    cin>>n;
+    vector<int>a(n);
+    for(int i=0;i<n-1;i++)
+        cin>>a[i];
+
+int missing = MissingNo(a,n);
+        cout<<missing<<" ";
+
+
     return 0;
 }
