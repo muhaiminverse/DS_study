@@ -1,6 +1,8 @@
 #include<bits/stdc++.h>
 using namespace std;
 
+//Time complexity O(n+1+n+1+n+1) = O(3n + 1) = O(3n) = O(c*n) = O(n)
+
 int sum1(vector<int> a, int n)
 {
     int sum=0;
@@ -31,8 +33,8 @@ int main()
 
     sort(a.begin(),a.end());
 
-    int sumwithout = sum1(a,n);
-    int sumwith = sum2(a[1],a[n-1]);
+    int sumwithout = sum1(a,n); //sum of the given array
+    int sumwith = sum2(a[1],a[n-1]);//sum first N natural numbers in the array
 
     int mising_number = sumwith-sumwithout;
         cout<<mising_number<<" ";
@@ -52,7 +54,7 @@ ans->3
 
 7
 54 52 56 51 53 50
-55
+and->55
 
 */
 

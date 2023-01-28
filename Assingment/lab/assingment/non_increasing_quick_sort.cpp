@@ -3,11 +3,13 @@ using namespace std;
 
 vector<int>quick_sort(vector<int>&a)
 {
+    //base case
     if(a.size()<=1)
     {
         return a;
     }
-    int pivot = a.size()-2;
+    //pivot element + divide
+    int pivot =a.size()-1;
     vector<int>b,c;
     for(int i=0; i<a.size(); i++)
     {
@@ -37,16 +39,22 @@ vector<int>quick_sort(vector<int>&a)
 
 }
 
+
+
 int main()
 {
+
     int n;
     cin>>n;
     vector<int>a(n);
-    for (int i=0; i<n; i++)
+    for(int i=0;i<n;i++)
         cin>>a[i];
+
     vector<int>sort_a = quick_sort(a);
     for(int i=0; i<sort_a.size(); i++)
         cout<<sort_a[i]<<" ";
 
     return 0;
 }
+
+
