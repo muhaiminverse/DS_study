@@ -1,25 +1,31 @@
-#include<bits/stdc++.h>
+#include<iostream>
+#include<cstring>
 using namespace std;
-
-int MissingNo(vector<int> a, int n)
-{
-    int i, total;
-    total = (n + 1) * (n + 2) / 2;
-    for (i = 0; i < n-1; i++)
-        total -= a[i];
-    return total;
-}
 int main()
 {
-    int n;
-    cin>>n;
-    vector<int>a(n);
-    for(int i=0;i<n-1;i++)
-        cin>>a[i];
-
-int missing = MissingNo(a,n);
-        cout<<missing<<" ";
-
-
-    return 0;
+  char names[10][10], temp[10];      //creating two character arrays, one for storing and one for interchanging
+  int i, j;
+  cout<<"Enter any 10 names  : ";
+  for(i=0; i<10; i++)
+  {
+    cin>>names[i];
+  }
+  for(i=10; i>=0; i--)                 //bubble sort begins to sort the data
+  {
+    for(j=0; j<=i; j++)
+    {
+      if(strcmp(names[j], names[j+1])>0)       //comparing only the ASCII equivalent of the entire word and interchanging if greater
+      {
+        strcpy(temp, names[j]);
+        strcpy(names[j], names[j+1]);
+        strcpy(names[j+1], temp);
+      }
+    }
+  }
+  cout<<"Names rearranged in alphabetical order : \n";
+  for(i=0; i<10; i++)
+  {
+    cout<<names[i]<<"\n";
+  }
+  return 0;
 }

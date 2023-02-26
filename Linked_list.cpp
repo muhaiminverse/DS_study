@@ -4,12 +4,12 @@ using namespace std;
 class node{
 public:
     int data; //node
-    node * next; //pointer variable
+    node *next; //pointer variable
 };
 
 class LinkedList{
 public:
-    node * head; //pointer variable
+    node *head; //pointer variable
 
     LinkedList()
     {
